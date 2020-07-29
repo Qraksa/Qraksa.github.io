@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  scrollbar-base-color: black;
+}
+div {
+  float: left;
+}
+.kwadrat4 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 5 */
+
+.kwadrat5 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+/* Rectangle 6 */
+
+.kwadrat6 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 7 */
+
+.kwadrat7 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 8 */
+
+.kwadrat8 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 9 */
+
+.kwadrat9 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 18 */
+
+.kwadrat18 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 19 */
+
+.kwadrat19 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 20 */
+
+.kwadrat20 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 21 */
+
+.kwadrat21 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 22 */
+
+.kwadrat22 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+
+/* Rectangle 23 */
+
+.kwadrat23 {
+  width: 191px;
+  height: 191px;
+  margin-bottom: 18px;
+  margin-right: 18px;
+  background: #c4c4c4;
+  cursor: pointer;
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  border: white solid 6px;
+  background: darkgrey;
+}
+::-webkit-scrollbar-thumb {
+  background: black;
+}
