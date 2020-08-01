@@ -206,10 +206,13 @@ function zdjęcia() {
           jedenprodukt1.appendChild(zmniejsz1);
           var delete1 = document.createElement("div");
           delete1.setAttribute("id", "delete");
+          delete1.setAttribute("class", originalSrc);
+          delete1.setAttribute("onClick", "ponownykoszyk(this.target)");
           var krzyz1 = document.createElement("span");
           krzyz1.setAttribute("id", "krzyz");
           var krzyzcontent1 = document.createTextNode("x");
           krzyz1.appendChild(krzyzcontent1);
+          krzyz1.setAttribute("class", originalSrc);
           delete1.appendChild(krzyz1);
           jedenprodukt1.appendChild(delete1);
           maxzdj.classList.remove("open");
@@ -228,49 +231,47 @@ function zdjęcia() {
           kolkoilicznik.style.opacity = "1";
           var pozycja = originalSrcs.indexOf(originalSrc);
           originalSrcsout.push(originalSrc);
-          console.log(originalSrcsout);
           originalSrcs.splice(pozycja, 1);
+          console.log(originalSrcsout);
           zwieksz1.addEventListener("click", function () {
             iloscproduktów1.value = parseInt(iloscproduktów1.value) + 1;
           });
-          zmniejsz1.addEventListener("click", function () {
+          zmniejsz1.addEventListener("click", function zmniejszanie() {
             if (iloscproduktów1.value <= 2) {
               iloscproduktów1.value = 1;
             } else {
               iloscproduktów1.value = parseInt(iloscproduktów1.value) - 1;
             }
           });
+        }
+        delete1.addEventListener("click", function () {
+          liczniktakio = liczniktakio - 1;
+          document.getElementById("licznik").textContent = liczniktakio;
+          if (liczniktakio == 0) {
+            var kolkoilicznik = document.getElementById("kolkoilicznik");
+            kolkoilicznik.style.opacity = "0";
+          }
+        });
+        document.getElementById("licznik").textContent = liczniktakio;
+        delete1.onclick = function ponownykoszyk(clicked_class) {
+          clicked_class = event.target;
+          var pozycja = originalSrcsout.indexOf(clicked_class.className);
+          originalSrcsout.splice(pozycja, 1);
+          originalSrcs.push(clicked_class.className);
+        };
+        if (delete1) {
           delete1.addEventListener("click", function () {
-            var liczbakoszy = document.getElementsByTagName("containerkoszyka")
-              .length;
-            if (liczbakoszy > 0) {
-              zmniejsz1.style.opacity = "0";
-              zwieksz1.style.opacity = "0";
-              iloscproduktów1.style.opacity = "0";
-              Koszykwkoszyku.style.opacity = "0";
-              napisKoszykjestpusty.style.opacity = "0";
-              napisNictuniema.style.opacity = "0";
-              napisKoszyk.style.opacity = "1";
-              const jedenprodukt = document.getElementById("jedenprodukt");
-              jedenprodukt.style.opacity = "0";
-              var kolkoilicznik = document.getElementById("kolkoilicznik");
-              kolkoilicznik.style.opacity = "0";
-            } else if (liczbakoszy == 0) {
-              zmniejsz1.style.opacity = "0";
-              zwieksz1.style.opacity = "0";
-              iloscproduktów1.style.opacity = "0";
+            zamowieniektores1.remove();
+            var liczbaproduktowkoszyk = document.getElementById(
+              "containerkoszyka"
+            );
+            if (!liczbaproduktowkoszyk) {
               Koszykwkoszyku.style.opacity = "1";
               napisKoszykjestpusty.style.opacity = "1";
               napisNictuniema.style.opacity = "1";
-              napisKoszyk.style.opacity = "0";
-              const jedenprodukt = document.getElementById("jedenprodukt");
-              jedenprodukt.style.opacity = "0";
-              var kolkoilicznik = document.getElementById("kolkoilicznik");
-              kolkoilicznik.style.opacity = "0";
             }
           });
         }
-        document.getElementById("licznik").textContent = liczniktakio;
       };
     });
   });
