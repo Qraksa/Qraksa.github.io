@@ -244,14 +244,21 @@ function zdjęcia() {
             }
           });
         }
-        delete1.addEventListener("click", function () {
-          liczniktakio = liczniktakio - 1;
-          document.getElementById("licznik").textContent = liczniktakio;
-          if (liczniktakio == 0) {
-            var kolkoilicznik = document.getElementById("kolkoilicznik");
-            kolkoilicznik.style.opacity = "0";
-          }
-        });
+        try {
+          delete1.addEventListener("click", function () {
+            liczniktakio = liczniktakio - 1;
+            document.getElementById("licznik").textContent = liczniktakio;
+            if (liczniktakio == 0) {
+              var kolkoilicznik = document.getElementById("kolkoilicznik");
+              kolkoilicznik.style.opacity = "0";
+            }
+          });
+        } catch (err) {
+          var Jestjuztakiprodukt = document.getElementById(
+            "Jestjuztakiprodukt"
+          );
+          Jestjuztakiprodukt.style.color = "red";
+        }
         document.getElementById("licznik").textContent = liczniktakio;
         delete1.onclick = function ponownykoszyk(clicked_class) {
           clicked_class = event.target;
@@ -283,6 +290,8 @@ maxzdj.addEventListener("click", function (e) {
   if (e.target.classList.contains("maxzdj")) {
     maxzdj.classList.remove("open");
     informacje.classList.remove("open");
+    var Jestjuztakiprodukt = document.getElementById("Jestjuztakiprodukt");
+    Jestjuztakiprodukt.style.color = "white";
   }
 });
 

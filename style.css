@@ -13,6 +13,7 @@ html {
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 body {
   padding: 0;
@@ -20,6 +21,7 @@ body {
   font-family: Poppins, sans-serif;
   font-size: 1.3rem;
   overflow: hidden;
+  position: relative;
 }
 a {
   text-decoration: none;
@@ -52,16 +54,14 @@ nav a:hover {
 }
 #logo-img {
   display: flex;
-  height: 90%;
   background: #202125;
-  padding: 10px 32px;
-  align-items: flex-start;
+  padding: 10px 10px;
   color: white;
   transition: 0.4s;
 }
 
 #logo-img img {
-  height: 90px;
+  height: 60px;
 }
 
 #logo-img:hover {
@@ -251,7 +251,7 @@ p {
   color: black;
   border: solid 2px black;
   border-radius: 8px;
-  padding: 1.4vh 4vw;
+  padding: 1.2vh 3vw;
   font-weight: bold;
   position: absolute;
   left: 75%;
@@ -263,7 +263,7 @@ p {
   background-color: black;
   color: white;
   border-radius: 8px;
-  padding: 1.4vh 4vw;
+  padding: 1.2vh 3vw;
   font-weight: bold;
   cursor: pointer;
   transition: 0.4s ease-in-out;
@@ -273,7 +273,7 @@ p {
   color: grey;
   border: solid 2px grey;
   border-radius: 8px;
-  padding: 1.4vh 4vw;
+  padding: 1.2vh 3vw;
   font-weight: bold;
   cursor: pointer;
   transition: 0s ease-out;
@@ -393,6 +393,15 @@ input::-webkit-inner-spin-button {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+#Jestjuztakiprodukt {
+  font-size: 0.7vw;
+  color: white;
+  position: absolute;
+  left: 75%;
+  bottom: 60px;
+  transform: translate(-50%, -50%);
+  opacity: 1;
 }
 
 /*Filtry*/
@@ -565,9 +574,9 @@ input::-webkit-inner-spin-button {
 
 /*iframe*/
 
-@media (max-width: 1616px) {
+@media (max-width: 1629px) {
   iframe {
-    width: 438px;
+    width: 450px;
     height: 766.39px;
   }
 }
@@ -580,18 +589,41 @@ input::-webkit-inner-spin-button {
 }
 @media (max-width: 875px) {
   iframe {
-    width: 655.19px;
     position: absolute;
     left: 25%;
-    width: 438px;
+    width: 450px;
     height: 751.19px;
   }
 }
-@media (max-height: 734px) {
+
+@media (max-height: 856px) {
   iframe {
-    top: 14%;
+    top: 12%;
+    height: 690px;
   }
 }
+
+@media (max-height: 789px) {
+  iframe {
+    top: 11%;
+    height: 615px;
+  }
+}
+
+@media (max-height: 690px) {
+  iframe {
+    top: 14%;
+    height: 550px;
+  }
+}
+
+@media (max-height: 642px) {
+  iframe {
+    top: 14%;
+    height: 500px;
+  }
+}
+
 @media (max-width: 584px) {
   iframe {
     width: 230px;
