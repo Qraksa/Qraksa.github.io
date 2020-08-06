@@ -239,77 +239,59 @@ function zdjęcia() {
           originalSrcsout.push(originalSrc);
           originalSrcs.splice(pozycja, 1);
         }
-        var cenaproduktuwkoszyku12 = document.querySelectorAll(
-          "#cenaproduktuwkoszyku"
-        );
-        zwieksz1.addEventListener("click", function () {
-          iloscproduktów1.value = parseInt(iloscproduktów1.value) + 1;
-          iloscproduktów1.setAttribute("class", iloscproduktów1.value);
-          var punktodniesienia = cenazawszystko.innerHTML.replace("zł", "");
-          var rodzic = zwieksz1.parentNode;
-          var dziecko = rodzic.lastChild;
-          var klasadziecka = dziecko.textContent;
-          var samaliczba2 = klasadziecka;
-          var liczba2 = samaliczba2.replace("zł", "");
-          var tojestto = Number(punktodniesienia) + Number(liczba2);
-          var tojesttozzł = tojestto + "zł";
-          cenazawszystko.innerHTML = tojesttozzł;
-        });
-        zmniejsz1.addEventListener("click", function zmniejszanie() {
-          iloscproduktów1.value = parseInt(iloscproduktów1.value) - 1;
-          iloscproduktów1.setAttribute("class", iloscproduktów1.value);
-          var samaliczba2 = 0;
-          var punktodniesienia = cenazawszystko.innerHTML.replace("zł", "");
-          var rodzic = zmniejsz1.parentNode;
-          var dziecko = rodzic.lastChild;
-          var klasadziecka = dziecko.textContent;
-          var samaliczba2 = klasadziecka;
-          var liczba2 = samaliczba2.replace("zł", "");
-          if (iloscproduktów1.value >= 1) {
-            var tojestto = Number(punktodniesienia) - Number(liczba2);
+        try {
+          var cenaproduktuwkoszyku12 = document.querySelectorAll(
+            "#cenaproduktuwkoszyku"
+          );
+          zwieksz1.addEventListener("click", function () {
+            iloscproduktów1.value = parseInt(iloscproduktów1.value) + 1;
+            iloscproduktów1.setAttribute("class", iloscproduktów1.value);
+            var punktodniesienia = cenazawszystko.innerHTML.replace("zł", "");
+            var rodzic = zwieksz1.parentNode;
+            var dziecko = rodzic.lastChild;
+            var klasadziecka = dziecko.textContent;
+            var samaliczba2 = klasadziecka;
+            var liczba2 = samaliczba2.replace("zł", "");
+            var tojestto = Number(punktodniesienia) + Number(liczba2);
             var tojesttozzł = tojestto + "zł";
             cenazawszystko.innerHTML = tojesttozzł;
-          }
-          if (iloscproduktów1.value <= 1) {
-            iloscproduktów1.value = 1;
-            samaliczba2 = 0;
-            for (
-              var cenajednegoproduktu = 0;
-              cenajednegoproduktu < cenaproduktuwkoszyku12.length;
-              cenajednegoproduktu++
-            ) {
-              var cenajednegoproduktu1 =
-                cenaproduktuwkoszyku12[cenajednegoproduktu].innerHTML;
-              var samaliczba = cenajednegoproduktu1.replace("zł", "");
-              var rodzic =
-                cenaproduktuwkoszyku12[cenajednegoproduktu].parentNode;
-              var dziecko = rodzic.firstChild;
-              var klasadziecka = dziecko.className;
-              var iloscproduktu = klasadziecka * samaliczba;
-              var samaliczba2 = Number(samaliczba2) + Number(iloscproduktu);
-              var liczba2 = samaliczba2 + "zł";
-              cenazawszystko.innerHTML = liczba2;
+          });
+          zmniejsz1.addEventListener("click", function zmniejszanie() {
+            iloscproduktów1.value = parseInt(iloscproduktów1.value) - 1;
+            iloscproduktów1.setAttribute("class", iloscproduktów1.value);
+            var samaliczba2 = 0;
+            var punktodniesienia = cenazawszystko.innerHTML.replace("zł", "");
+            var rodzic = zmniejsz1.parentNode;
+            var dziecko = rodzic.lastChild;
+            var klasadziecka = dziecko.textContent;
+            var samaliczba2 = klasadziecka;
+            var liczba2 = samaliczba2.replace("zł", "");
+            if (iloscproduktów1.value >= 1) {
+              var tojestto = Number(punktodniesienia) - Number(liczba2);
+              var tojesttozzł = tojestto + "zł";
+              cenazawszystko.innerHTML = tojesttozzł;
             }
+            if (iloscproduktów1.value <= 1) {
+              iloscproduktów1.value = 1;
+            }
+          });
+          samaliczba2 = 0;
+          for (
+            var cenajednegoproduktu = 0;
+            cenajednegoproduktu < cenaproduktuwkoszyku12.length;
+            cenajednegoproduktu++
+          ) {
+            var cenajednegoproduktu1 =
+              cenaproduktuwkoszyku12[cenajednegoproduktu].innerHTML;
+            var samaliczba = cenajednegoproduktu1.replace("zł", "");
+            var rodzic = cenaproduktuwkoszyku12[cenajednegoproduktu].parentNode;
+            var dziecko = rodzic.firstChild;
+            var klasadziecka = dziecko.className;
+            var iloscproduktu = klasadziecka * samaliczba;
+            var samaliczba2 = Number(samaliczba2) + Number(iloscproduktu);
+            var liczba2 = samaliczba2 + "zł";
+            cenazawszystko.innerHTML = liczba2;
           }
-        });
-        samaliczba2 = 0;
-        for (
-          var cenajednegoproduktu = 0;
-          cenajednegoproduktu < cenaproduktuwkoszyku12.length;
-          cenajednegoproduktu++
-        ) {
-          var cenajednegoproduktu1 =
-            cenaproduktuwkoszyku12[cenajednegoproduktu].innerHTML;
-          var samaliczba = cenajednegoproduktu1.replace("zł", "");
-          var rodzic = cenaproduktuwkoszyku12[cenajednegoproduktu].parentNode;
-          var dziecko = rodzic.firstChild;
-          var klasadziecka = dziecko.className;
-          var iloscproduktu = klasadziecka * samaliczba;
-          var samaliczba2 = Number(samaliczba2) + Number(iloscproduktu);
-          var liczba2 = samaliczba2 + "zł";
-          cenazawszystko.innerHTML = liczba2;
-        }
-        try {
           delete1.addEventListener("click", function () {
             liczniktakio = liczniktakio - 1;
             var rodzicek = delete1.parentNode;
@@ -324,6 +306,9 @@ function zdjęcia() {
             var cenapofakciezł = cenapofakcie + "zł";
             cenazawszystko.innerHTML = cenapofakciezł;
             document.getElementById("licznik").textContent = liczniktakio;
+            if (liczniktakio == 0) {
+              kolkoilicznik.style.opacity = "0";
+            }
           });
         } catch (err) {
           var Jestjuztakiprodukt = document.getElementById(
