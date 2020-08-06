@@ -271,7 +271,7 @@ function zdjęcia() {
               var tojesttozzł = tojestto + "zł";
               cenazawszystko.innerHTML = tojesttozzł;
             }
-            if (iloscproduktów1.value <= 1) {
+            if (iloscproduktów1.value < 1) {
               iloscproduktów1.value = 1;
             }
           });
