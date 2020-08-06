@@ -18,7 +18,7 @@ const informacje = document.getElementById("informacje");
 const maxzdj = document.querySelector(".maxzdj");
 const napisKoszykjestpusty = document.getElementById("napisKoszykjestpusty");
 const napisNictuniema = document.getElementById("napisNictuniema");
-const napisKoszyk = document.getElementById("napisKoszyk");
+const Razem = document.getElementById("Razem");
 var iframe = document.getElementById("sklep");
 var ramka = iframe.contentDocument || iframe.contentWindow.document;
 const Koszykwkoszyku = document.getElementById("Koszykwkoszyku");
@@ -26,6 +26,8 @@ const zmniejsz = document.getElementById("zmniejsz");
 const zwieksz = document.getElementById("zwieksz");
 const iloscproduktów = document.getElementById("iloscproduktów");
 const deleted = document.getElementById("delete");
+const Zamawianie = document.getElementById("foreignobjekt2");
+const cenazawszystko = document.getElementById("cenazawszystko");
 
 menuIcon.addEventListener("click", function () {
   if (słoik.style.opacity == "1") {
@@ -115,9 +117,10 @@ var originalSrcsout = [];
 
 var liczniktakio = 0;
 
+var lista = [];
+
 function zdjęcia() {
   const kwadraty = ramka.querySelectorAll("#containersklep img");
-
   kwadraty.forEach((kwadrat) => {
     kwadrat.addEventListener("click", () => {
       maxzdj.classList.add("open");
@@ -179,31 +182,25 @@ function zdjęcia() {
           var jedenprodukt1 = document.createElement("div");
           jedenprodukt1.setAttribute("id", "jedenprodukt");
           zamowieniektores1.appendChild(jedenprodukt1);
+          var iloscproduktów1 = document.createElement("input");
+          iloscproduktów1.setAttribute("id", "iloscproduktów");
+          iloscproduktów1.setAttribute("type", "number");
+          iloscproduktów1.setAttribute("value", "1");
+          iloscproduktów1.setAttribute("min", "1");
+          iloscproduktów1.setAttribute("class", "1");
+          iloscproduktów1.readOnly = true;
+          jedenprodukt1.appendChild(iloscproduktów1);
+          var zwieksz1 = document.createElement("button");
+          zwieksz1.setAttribute("id", "zwieksz");
+          var zwiekszcontent1 = document.createTextNode("+");
+          zwieksz1.appendChild(zwiekszcontent1);
+          jedenprodukt1.appendChild(zwieksz1);
           var zdjeciekoszyk1 = document.createElement("img");
           zdjeciekoszyk1.setAttribute("id", "zdjeciekoszyk");
           jedenprodukt1.appendChild(zdjeciekoszyk1);
           var nazwaproduktuwkoszyku1 = document.createElement("h1");
           nazwaproduktuwkoszyku1.setAttribute("id", "nazwaproduktuwkoszyku");
           jedenprodukt1.appendChild(nazwaproduktuwkoszyku1);
-          var cenaproduktuwkoszyku1 = document.createElement("h4");
-          cenaproduktuwkoszyku1.setAttribute("id", "cenaproduktuwkoszyku");
-          jedenprodukt1.appendChild(cenaproduktuwkoszyku1);
-          var zwieksz1 = document.createElement("button");
-          zwieksz1.setAttribute("id", "zwieksz");
-          var zwiekszcontent1 = document.createTextNode("+");
-          zwieksz1.appendChild(zwiekszcontent1);
-          jedenprodukt1.appendChild(zwieksz1);
-          var iloscproduktów1 = document.createElement("input");
-          iloscproduktów1.setAttribute("id", "iloscproduktów");
-          iloscproduktów1.setAttribute("type", "number");
-          iloscproduktów1.setAttribute("value", "1");
-          iloscproduktów1.setAttribute("min", "1");
-          jedenprodukt1.appendChild(iloscproduktów1);
-          var zmniejsz1 = document.createElement("button");
-          zmniejsz1.setAttribute("id", "zmniejsz");
-          var zmniejszcontent1 = document.createTextNode("-");
-          zmniejsz1.appendChild(zmniejszcontent1);
-          jedenprodukt1.appendChild(zmniejsz1);
           var delete1 = document.createElement("div");
           delete1.setAttribute("id", "delete");
           delete1.setAttribute("class", originalSrc);
@@ -215,6 +212,14 @@ function zdjęcia() {
           krzyz1.setAttribute("class", originalSrc);
           delete1.appendChild(krzyz1);
           jedenprodukt1.appendChild(delete1);
+          var zmniejsz1 = document.createElement("button");
+          zmniejsz1.setAttribute("id", "zmniejsz");
+          var zmniejszcontent1 = document.createTextNode("-");
+          zmniejsz1.appendChild(zmniejszcontent1);
+          jedenprodukt1.appendChild(zmniejsz1);
+          var cenaproduktuwkoszyku1 = document.createElement("h4");
+          cenaproduktuwkoszyku1.setAttribute("id", "cenaproduktuwkoszyku");
+          jedenprodukt1.appendChild(cenaproduktuwkoszyku1);
           maxzdj.classList.remove("open");
           zdjeciekoszyk1.src = originalSrc;
           nazwaproduktuwkoszyku1.innerText = naglowekdokoszyka;
@@ -224,34 +229,101 @@ function zdjęcia() {
           iloscproduktów1.style.opacity = "1";
           Koszykwkoszyku.style.opacity = "0";
           napisKoszykjestpusty.style.opacity = "0";
+          Razem.style.opacity = "1";
+          Zamawianie.style.opacity = "1";
           napisNictuniema.style.opacity = "0";
-          napisKoszyk.style.opacity = "1";
           jedenprodukt1.style.opacity = "1";
           var kolkoilicznik = document.getElementById("kolkoilicznik");
           kolkoilicznik.style.opacity = "1";
           var pozycja = originalSrcs.indexOf(originalSrc);
           originalSrcsout.push(originalSrc);
           originalSrcs.splice(pozycja, 1);
-          console.log(originalSrcsout);
-          zwieksz1.addEventListener("click", function () {
-            iloscproduktów1.value = parseInt(iloscproduktów1.value) + 1;
-          });
-          zmniejsz1.addEventListener("click", function zmniejszanie() {
-            if (iloscproduktów1.value <= 2) {
-              iloscproduktów1.value = 1;
-            } else {
-              iloscproduktów1.value = parseInt(iloscproduktów1.value) - 1;
+        }
+        var cenaproduktuwkoszyku12 = document.querySelectorAll(
+          "#cenaproduktuwkoszyku"
+        );
+        zwieksz1.addEventListener("click", function () {
+          iloscproduktów1.value = parseInt(iloscproduktów1.value) + 1;
+          iloscproduktów1.setAttribute("class", iloscproduktów1.value);
+          var punktodniesienia = cenazawszystko.innerHTML.replace("zł", "");
+          var rodzic = zwieksz1.parentNode;
+          var dziecko = rodzic.lastChild;
+          var klasadziecka = dziecko.textContent;
+          var samaliczba2 = klasadziecka;
+          var liczba2 = samaliczba2.replace("zł", "");
+          var tojestto = Number(punktodniesienia) + Number(liczba2);
+          var tojesttozzł = tojestto + "zł";
+          cenazawszystko.innerHTML = tojesttozzł;
+        });
+        zmniejsz1.addEventListener("click", function zmniejszanie() {
+          iloscproduktów1.value = parseInt(iloscproduktów1.value) - 1;
+          iloscproduktów1.setAttribute("class", iloscproduktów1.value);
+          var samaliczba2 = 0;
+          var punktodniesienia = cenazawszystko.innerHTML.replace("zł", "");
+          var rodzic = zmniejsz1.parentNode;
+          var dziecko = rodzic.lastChild;
+          var klasadziecka = dziecko.textContent;
+          var samaliczba2 = klasadziecka;
+          var liczba2 = samaliczba2.replace("zł", "");
+          if (iloscproduktów1.value >= 1) {
+            var tojestto = Number(punktodniesienia) - Number(liczba2);
+            var tojesttozzł = tojestto + "zł";
+            cenazawszystko.innerHTML = tojesttozzł;
+          }
+          if (iloscproduktów1.value <= 1) {
+            iloscproduktów1.value = 1;
+            samaliczba2 = 0;
+            for (
+              var cenajednegoproduktu = 0;
+              cenajednegoproduktu < cenaproduktuwkoszyku12.length;
+              cenajednegoproduktu++
+            ) {
+              var cenajednegoproduktu1 =
+                cenaproduktuwkoszyku12[cenajednegoproduktu].innerHTML;
+              var samaliczba = cenajednegoproduktu1.replace("zł", "");
+              var rodzic =
+                cenaproduktuwkoszyku12[cenajednegoproduktu].parentNode;
+              var dziecko = rodzic.firstChild;
+              var klasadziecka = dziecko.className;
+              var iloscproduktu = klasadziecka * samaliczba;
+              var samaliczba2 = Number(samaliczba2) + Number(iloscproduktu);
+              var liczba2 = samaliczba2 + "zł";
+              cenazawszystko.innerHTML = liczba2;
             }
-          });
+          }
+        });
+        samaliczba2 = 0;
+        for (
+          var cenajednegoproduktu = 0;
+          cenajednegoproduktu < cenaproduktuwkoszyku12.length;
+          cenajednegoproduktu++
+        ) {
+          var cenajednegoproduktu1 =
+            cenaproduktuwkoszyku12[cenajednegoproduktu].innerHTML;
+          var samaliczba = cenajednegoproduktu1.replace("zł", "");
+          var rodzic = cenaproduktuwkoszyku12[cenajednegoproduktu].parentNode;
+          var dziecko = rodzic.firstChild;
+          var klasadziecka = dziecko.className;
+          var iloscproduktu = klasadziecka * samaliczba;
+          var samaliczba2 = Number(samaliczba2) + Number(iloscproduktu);
+          var liczba2 = samaliczba2 + "zł";
+          cenazawszystko.innerHTML = liczba2;
         }
         try {
           delete1.addEventListener("click", function () {
             liczniktakio = liczniktakio - 1;
+            var rodzicek = delete1.parentNode;
+            var iloscproduktów1 = rodzicek.firstChild;
+            var ceneuszproduktu1 = rodzicek.lastChild;
+            var ceneuszproduktu = ceneuszproduktu1.innerHTML.replace("zł", "");
+            var liczbaproduktu = iloscproduktów1.className;
+            var liczbadozamiany =
+              Number(liczbaproduktu) * Number(ceneuszproduktu);
+            var razemdoodjecia = cenazawszystko.innerHTML.replace("zł", "");
+            var cenapofakcie = Number(razemdoodjecia) - Number(liczbadozamiany);
+            var cenapofakciezł = cenapofakcie + "zł";
+            cenazawszystko.innerHTML = cenapofakciezł;
             document.getElementById("licznik").textContent = liczniktakio;
-            if (liczniktakio == 0) {
-              var kolkoilicznik = document.getElementById("kolkoilicznik");
-              kolkoilicznik.style.opacity = "0";
-            }
           });
         } catch (err) {
           var Jestjuztakiprodukt = document.getElementById(
@@ -275,6 +347,8 @@ function zdjęcia() {
             if (!liczbaproduktowkoszyk) {
               Koszykwkoszyku.style.opacity = "1";
               napisKoszykjestpusty.style.opacity = "1";
+              Razem.style.opacity = "0";
+              Zamawianie.style.opacity = "0";
               napisNictuniema.style.opacity = "1";
             }
           });
