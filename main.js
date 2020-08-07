@@ -28,7 +28,8 @@ const iloscproduktów = document.getElementById("iloscproduktów");
 const deleted = document.getElementById("delete");
 const Zamawianie = document.getElementById("foreignobjekt2");
 const cenazawszystko = document.getElementById("cenazawszystko");
-
+var słoiksklep = document.getElementById("słoiksklep");
+var Dziekujemy = document.getElementById("Dziekujemy");
 menuIcon.addEventListener("click", function () {
   if (słoik.style.opacity == "1") {
     słoik.style.opacity = "0";
@@ -36,12 +37,18 @@ menuIcon.addEventListener("click", function () {
     słoikkontakt.style.opacity = "0";
     słoik.style.zIndex = "-1";
     box1.style.zIndex = "-2";
+    słoiksklep.style.opacity = "0";
+    słoiksklep.style.zIndex = "-2";
+    słoikkontakt.style.zIndex = "-3";
   } else {
     słoik.style.opacity = "1";
     box1.style.opacity = "1";
     słoikkontakt.style.opacity = "1";
     słoik.style.zIndex = "30";
     box1.style.zIndex = "20";
+    słoiksklep.style.opacity = "1";
+    słoiksklep.style.zIndex = "21";
+    słoikkontakt.style.zIndex = "22";
   }
 });
 const time = setInterval(function () {
@@ -95,6 +102,7 @@ Wyslij.addEventListener("click", function () {
   napiszdonas.style.opacity = "0";
   poletekstowe.style.opacity = "0";
   Twojawiadomosc.style.opacity = "1";
+  Dziekujemy.style.opacity = "1";
 });
 
 napisWyslij.addEventListener("click", function () {
@@ -103,6 +111,7 @@ napisWyslij.addEventListener("click", function () {
   napiszdonas.style.opacity = "0";
   poletekstowe.style.opacity = "0";
   Twojawiadomosc.style.opacity = "1";
+  Dziekujemy.style.opacity = "1";
 });
 
 var originalSrcs = [
@@ -121,6 +130,7 @@ var lista = [];
 
 function zdjęcia() {
   const kwadraty = ramka.querySelectorAll("#containersklep img");
+  console.log(kwadraty);
   kwadraty.forEach((kwadrat) => {
     kwadrat.addEventListener("click", () => {
       maxzdj.classList.add("open");
@@ -221,6 +231,7 @@ function zdjęcia() {
           cenaproduktuwkoszyku1.setAttribute("id", "cenaproduktuwkoszyku");
           jedenprodukt1.appendChild(cenaproduktuwkoszyku1);
           maxzdj.classList.remove("open");
+          informacje.classList.remove("open");
           zdjeciekoszyk1.src = originalSrc;
           nazwaproduktuwkoszyku1.innerText = naglowekdokoszyka;
           cenaproduktuwkoszyku1.innerText = cenadokoszyka;
@@ -244,6 +255,7 @@ function zdjęcia() {
             "#cenaproduktuwkoszyku"
           );
           zwieksz1.addEventListener("click", function () {
+            iloscproduktów1.style.color = "rgb(0,0,0)";
             iloscproduktów1.value = parseInt(iloscproduktów1.value) + 1;
             iloscproduktów1.setAttribute("class", iloscproduktów1.value);
             var punktodniesienia = cenazawszystko.innerHTML.replace("zł", "");
@@ -257,8 +269,6 @@ function zdjęcia() {
             cenazawszystko.innerHTML = tojesttozzł;
           });
           zmniejsz1.addEventListener("click", function zmniejszanie() {
-            iloscproduktów1.value = parseInt(iloscproduktów1.value) - 1;
-            iloscproduktów1.setAttribute("class", iloscproduktów1.value);
             var samaliczba2 = 0;
             var punktodniesienia = cenazawszystko.innerHTML.replace("zł", "");
             var rodzic = zmniejsz1.parentNode;
@@ -270,9 +280,16 @@ function zdjęcia() {
               var tojestto = Number(punktodniesienia) - Number(liczba2);
               var tojesttozzł = tojestto + "zł";
               cenazawszystko.innerHTML = tojesttozzł;
-            }
-            if (iloscproduktów1.value < 1) {
+            } else if (iloscproduktów1.value < 1) {
               iloscproduktów1.value = 1;
+            }
+            iloscproduktów1.value = parseInt(iloscproduktów1.value) - 1;
+            iloscproduktów1.setAttribute("class", iloscproduktów1.value);
+            if (iloscproduktów1.value == 0) {
+              iloscproduktów1.style.color = "rgb(255, 0, 0)";
+            }
+            if (iloscproduktów1.value > 0) {
+              iloscproduktów1.style.color = "rgb(0,0,0)";
             }
           });
           samaliczba2 = 0;

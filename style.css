@@ -445,6 +445,12 @@ input::-webkit-inner-spin-button {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+#cenazawszystko {
+  font-family: "ArialMT" "Arial", sans-serif;
+  font-size: 14px;
+  fill: black;
+  font-weight: bold;
+}
 
 /*Filtry*/
 
@@ -685,6 +691,56 @@ input::-webkit-inner-spin-button {
 @media (max-width: 1093px) {
   #menu-icon {
     display: flex;
+  }
+}
+
+/*Wyskakujące okienko*/
+
+@media (orientation: portrait) {
+  #informacje {
+    transform: rotateZ(90deg);
+    position: absolute;
+    left: 0%;
+    top: 35%;
+  }
+  .maxzdjecie {
+    transform: rotateZ(-90deg);
+  }
+  .opisProduktu {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: rotateZ(-90deg);
+  }
+  #Dokoszyka {
+    left: 84%;
+    bottom: 45%;
+    padding: 1vw 2vw;
+    font-size: 10px;
+    transform: rotateZ(-90deg);
+  }
+  #Dokoszyka:hover {
+    left: 84%;
+    bottom: 45%;
+    padding: 1vw 2vw;
+    font-size: 10px;
+    transform: rotateZ(-90deg);
+  }
+  #Dokoszyka:active {
+    left: 84%;
+    bottom: 45%;
+    padding: 1vw 2vw;
+    font-size: 10px;
+    transform: rotateZ(-90deg);
+  }
+  p {
+    font-size: 2vw;
+  }
+  #Jestjuztakiprodukt {
+    left: 78%;
+    bottom: 50%;
+    transform: rotateZ(-90deg);
+    font-size: 1.4vw;
   }
 }
 
