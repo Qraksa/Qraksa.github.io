@@ -19,8 +19,6 @@ const maxzdj = document.querySelector(".maxzdj");
 const napisKoszykjestpusty = document.getElementById("napisKoszykjestpusty");
 const napisNictuniema = document.getElementById("napisNictuniema");
 const Razem = document.getElementById("Razem");
-var iframe = document.getElementById("sklep");
-var ramka = iframe.contentDocument || iframe.contentWindow.document;
 const Koszykwkoszyku = document.getElementById("Koszykwkoszyku");
 const zmniejsz = document.getElementById("zmniejsz");
 const zwieksz = document.getElementById("zwieksz");
@@ -129,8 +127,9 @@ var liczniktakio = 0;
 var lista = [];
 
 function zdjęcia() {
-  const kwadraty = ramka.querySelectorAll("#containersklep img");
-  console.log(kwadraty);
+  var iframe = document.getElementById("sklep");
+  var ramka = iframe.contentDocument || iframe.contentWindow.document;
+  var kwadraty = ramka.querySelectorAll("#containersklep img");
   kwadraty.forEach((kwadrat) => {
     kwadrat.addEventListener("click", () => {
       maxzdj.classList.add("open");
