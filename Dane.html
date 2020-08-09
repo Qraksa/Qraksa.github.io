@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Wyraź siebie i swój świat za pomocą stworzonego przez Ciebie słoika!"
+    />
+    <meta
+      name="keywords"
+      content="słoik, słoiki, deczko, świecące, szkło, przykrywka, wieczko"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Deczko</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <nav>
+      <div id="logo-img">
+        <a href="index.html">
+          <img src="logo.svg" alt="Deczko" />
+        </a>
+      </div>
+      <div id="menu-icon">
+        <i class="fas fa-bars">+</i>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="header">
+        <h2>Dane osobowe</h2>
+      </div>
+      <form id="form" class="form">
+        <div class="form-control">
+          <label for="username">Imię</label>
+          <input type="text" placeholder="Imię" id="username" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">Nazwisko</label>
+          <input type="text" placeholder="Nazwisko" id="Nazwisko" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">E-mail</label>
+          <input type="email" placeholder="E-mail" id="email" />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">Numer telefonu</label>
+          <input
+            type="tel"
+            placeholder="Numer telefonu"
+            id="password"
+            pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+          />
+          <small>Error message</small>
+        </div>
+        <button>Dalej</button>
+      </form>
+    </div>
+    <script src="Danedoformularza.js"></script>
+  </body>
+</html>

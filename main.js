@@ -28,6 +28,13 @@ const Zamawianie = document.getElementById("foreignobjekt2");
 const cenazawszystko = document.getElementById("cenazawszystko");
 var słoiksklep = document.getElementById("słoiksklep");
 var Dziekujemy = document.getElementById("Dziekujemy");
+/*
+window.onload = load;
+function load() {
+  var słoiksklep = document.getElementById("słoiksklep");
+  słoiksklep.innerHTML = localStorage.getItem("całysłoik");
+}
+*/
 menuIcon.addEventListener("click", function () {
   if (słoik.style.opacity == "1") {
     słoik.style.opacity = "0";
@@ -125,6 +132,8 @@ var originalSrcsout = [];
 var liczniktakio = 0;
 
 var lista = [];
+
+var liczbazmiennej = 0;
 
 function zdjęcia() {
   var iframe = document.getElementById("sklep");
@@ -249,6 +258,8 @@ function zdjęcia() {
           originalSrcsout.push(originalSrc);
           originalSrcs.splice(pozycja, 1);
         }
+        var całysłoik = document.getElementById("słoiksklep").innerHTML;
+        localStorage.setItem("całysłoik", całysłoik);
         try {
           var cenaproduktuwkoszyku12 = document.querySelectorAll(
             "#cenaproduktuwkoszyku"
@@ -266,6 +277,8 @@ function zdjęcia() {
             var tojestto = Number(punktodniesienia) + Number(liczba2);
             var tojesttozzł = tojestto + "zł";
             cenazawszystko.innerHTML = tojesttozzł;
+            var całysłoik = document.getElementById("słoiksklep").innerHTML;
+            localStorage.setItem("całysłoik", całysłoik);
           });
           zmniejsz1.addEventListener("click", function zmniejszanie() {
             var samaliczba2 = 0;
@@ -290,6 +303,8 @@ function zdjęcia() {
             if (iloscproduktów1.value > 0) {
               iloscproduktów1.style.color = "rgb(0,0,0)";
             }
+            var całysłoik = document.getElementById("słoiksklep").innerHTML;
+            localStorage.setItem("całysłoik", całysłoik);
           });
           samaliczba2 = 0;
           for (
@@ -342,6 +357,8 @@ function zdjęcia() {
         if (delete1) {
           delete1.addEventListener("click", function () {
             zamowieniektores1.remove();
+            var całysłoik = document.getElementById("słoiksklep").innerHTML;
+            localStorage.setItem("całysłoik", całysłoik);
             var liczbaproduktowkoszyk = document.getElementById(
               "containerkoszyka"
             );
