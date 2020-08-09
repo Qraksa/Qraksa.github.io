@@ -287,6 +287,7 @@ nav a:hover {
 @media (max-width: 815px) {
   .container2 {
     display: none;
+    margin-left: 0px;
   }
 }
 @media (min-width: 815px) {
