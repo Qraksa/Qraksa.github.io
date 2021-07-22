@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 968 968" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-149.693,-71.2576)">
+        <g transform="matrix(1,0,0,1,-17.7995,-33.5582)">
+            <circle cx="651.443" cy="588.766" r="474.425" style="fill:rgb(235,235,235);fill-opacity:0;stroke:black;stroke-width:19.05px;"/>
+        </g>
+        <g transform="matrix(5.91356,0,0,12.1111,-2555.15,-2358.44)">
+            <path d="M581.511,230.477C581.511,224.658 571.836,219.934 559.919,219.934L516.736,219.934C504.819,219.934 495.144,224.658 495.144,230.477L495.144,251.562C495.144,257.381 504.819,262.105 516.736,262.105L559.919,262.105C571.836,262.105 581.511,257.381 581.511,251.562L581.511,230.477Z" style="fill:rgb(235,235,235);fill-opacity:0;"/>
+            <clipPath id="_clip1">
+                <path d="M581.511,230.477C581.511,224.658 571.836,219.934 559.919,219.934L516.736,219.934C504.819,219.934 495.144,224.658 495.144,230.477L495.144,251.562C495.144,257.381 504.819,262.105 516.736,262.105L559.919,262.105C571.836,262.105 581.511,257.381 581.511,251.562L581.511,230.477Z"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(1,2.50708e-17,-5.39569e-17,-0.709382,-2.5237,434.433)">
+                    <path d="M540.851,272.651L581.511,302.375L500.191,302.375L540.851,272.651Z" style="fill:rgb(235,235,235);fill-opacity:0;stroke:black;stroke-width:2.7px;"/>
+                </g>
+            </g>
+            <path d="M581.511,230.477C581.511,224.658 571.836,219.934 559.919,219.934L516.736,219.934C504.819,219.934 495.144,224.658 495.144,230.477L495.144,251.562C495.144,257.381 504.819,262.105 516.736,262.105L559.919,262.105C571.836,262.105 581.511,257.381 581.511,251.562L581.511,230.477Z" style="fill:none;stroke:black;stroke-width:2.09px;"/>
+        </g>
+    </g>
+</svg>
