@@ -193,3 +193,9 @@ body {
   width: 100%;
   transition: width 0.3s;
 }
+.Plant {
+  position: fixed;
+  right: 2%;
+  bottom: 0%;
+  width: 10%;
+}
