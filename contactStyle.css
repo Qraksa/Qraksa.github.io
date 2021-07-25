@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   padding-bottom: 60px;
+  overflow-x: hidden;
 }
 button {
   font-family: "Poppins", sans-serif;
@@ -70,6 +71,10 @@ nav {
   color: #5f5f79;
   font-size: 18px;
   text-decoration: none;
+}
+.Menu {
+  text-decoration: none;
+  list-style: none;
 }
 .cart {
   flex: 1;
