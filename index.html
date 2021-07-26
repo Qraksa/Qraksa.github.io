@@ -13,7 +13,7 @@
 <body style="background-color: black">
   <header>
     <div class="logo-container">
-      <a class="Menu" href="./index.html"><img src="./img/logo2.svg" alt="logo" width="54" height="54" /></a>
+      <a id="LogoImage" class="Menu" href="./index.html"><img src="./img/logo2.svg" alt="logo" width="54" height="54" /></a>
       <a class="Menu" href="./index.html"><h4 style="color: rgb(255, 166, 57)" class="logo">Filip Jęczmyk</h4></a>
     </div>
     <nav>
@@ -28,8 +28,39 @@
       </ul>
     </nav>
     <div class="cart">
+      <img type="Button" class="HamburgerLogo" width="40" height="40" onclick="showDiv()" src="./img/HamburgerLogo.png"/>
     </div>
   </header>
+  <div class="HamburgerBackground">
+    <nav>
+        <ul class="nav-linksHam">
+            <li>
+                <a class="nav-linkHam" href="./Projects.html" style="color: white">Projects</a>
+            </li>
+            <br></br>
+            <li>
+                <a class="nav-linkHam" href="#" style="color: white">About Me</a>
+            </li>
+            <br></br>
+            <li><a class="nav-linkHam" href="./ContactMe.html" style="color: white">Contact</a></li>
+        </ul>
+    </nav>
+  </div>
+  <div class="HamburgerBackground2">
+    <nav>
+        <ul class="nav-linksHam">
+            <li>
+                <a class="nav-linkHam" href="./Projects.html" style="color: white">Projects</a>
+            </li>
+            <br></br>
+            <li>
+                <a class="nav-linkHam" href="#" style="color: white">About Me</a>
+            </li>
+            <br></br>
+            <li><a class="nav-linkHam" href="./ContactMe.html" style="color: white">Contact</a></li>
+        </ul>
+    </nav>
+  </div>
 
   <main>
     <section class="presentation">
@@ -49,7 +80,7 @@
     <img class="medium-circle" src="./img/mid-eclipse.svg" alt="" />
     <img class="small-circle" src="./img/small-eclipse.svg" alt="" />
   </main>
-  
+  <script src="./Script.js"></script>
 </body>
 
 </html>

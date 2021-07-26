@@ -26,9 +26,6 @@ header {
   display: flex;
 }
 
-.logo-container {
-  flex: 1;
-}
 .logo {
   font-weight: 400;
   margin: 15px;
@@ -201,5 +198,89 @@ nav {
 @media (min-width: 490px) {
   .body {
     overflow: hidden;
+  }
+}
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+  }
+  .logo-container {
+    position: absolute;
+    top: 1%;
+    left: 5%;
+  }
+}
+@media (min-width: 850px) {
+  .HamburgerLogo {
+    display: none;
+  }
+  .HamburgerBackground {
+    display: none;
+  }
+}
+.logo-container {
+  flex: 1;
+}
+.HamburgerLogo {
+  position: absolute;
+  top: 2.5%;
+  right: 5%;
+  cursor: pointer;
+}
+.HamburgerBackground {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: black;
+  width: 40%;
+  height: 30%;
+  border-bottom-left-radius: 1000px;
+  border-bottom: solid 10px;
+  border-left: solid 1px;
+  color: rgb(255, 166, 57);
+  animation-name: Show;
+  animation-duration: 1s;
+  z-index: 100;
+}
+.HamburgerBackground2 {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: black;
+  width: 40%;
+  height: 30%;
+  border-bottom-left-radius: 1000px;
+  border-bottom: solid 10px;
+  border-left: solid 1px;
+  color: rgb(255, 166, 57);
+  animation-name: Hide;
+  animation-duration: 1s;
+  z-index: 100;
+}
+.nav-linkHam {
+  text-decoration: none;
+  text-align: end;
+  margin-left: 70px;
+  font-size: 20px;
+}
+.nav-linksHam {
+  list-style: none;
+}
+
+@keyframes Show {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes Hide {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(300px);
   }
 }
