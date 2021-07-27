@@ -285,3 +285,8 @@ p {
     transform: translateX(300px);
   }
 }
+.PlatformImg {
+  position: absolute;
+  right: -1.7%;
+  top: -1%;
+}
